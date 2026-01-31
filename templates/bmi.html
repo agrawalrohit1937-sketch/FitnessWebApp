@@ -1,16 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>BMI Calculator</h2>
-<div class="bmi-container">
-    <label>Weight (kg):</label>
-    <input type="number" id="weight" placeholder="Enter weight">
+<section class="page-header">
+    <h2>Check Your Body Mass Index</h2>
+</section>
 
-    <label>Height (cm):</label>
-    <input type="number" id="height" placeholder="Enter height">
-
-    <button onclick="calculateBMI()" class="btn">Calculate BMI</button>
-
-    <div id="result" class="result-box"></div>
+<div class="bmi-wrapper">
+    <div class="bmi-box">
+        <label>Weight (kg)</label>
+        <input type="number" id="weight" placeholder="e.g. 70">
+        
+        <label>Height (cm)</label>
+        <input type="number" id="height" placeholder="e.g. 175">
+        
+        <button onclick="calculateBMI()" class="cta-button full-width">Calculate Now</button>
+        
+        <div id="result" class="hidden">
+            <h3 id="bmi-value">0.0</h3>
+            <p id="bmi-status">Waiting for input...</p>
+        </div>
+    </div>
 </div>
 {% endblock %}
