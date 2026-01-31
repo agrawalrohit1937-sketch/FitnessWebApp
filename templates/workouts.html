@@ -1,26 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Our Workout Programs</h2>
-<div class="grid-container">
-    
-    <div class="card">
-        <h3>🔥 Cardio Blast</h3>
-        <p>High intensity running and cycling to burn fat.</p>
-        <span class="badge">Beginner</span>
-    </div>
+<section class="page-header">
+    <h2>Explore Our Workout Programs</h2>
+    <p>Choose a plan that fits your schedule and goals.</p>
+</section>
 
-    <div class="card">
-        <h3>💪 Strength Training</h3>
-        <p>Heavy lifting to build muscle mass and power.</p>
-        <span class="badge">Advanced</span>
-    </div>
-
-    <div class="card">
-        <h3>🧘 Yoga & Flex</h3>
-        <p>Improve flexibility and mental peace.</p>
-        <span class="badge">All Levels</span>
-    </div>
-
+<div class="container">
+    <div class="card-grid">
+        {% for plan in plans %}
+        <div class="card">
+            <div class="card-header">
+                <h3>{{ plan.name }}</h3>
+                <span class="badge">{{ plan.level }}</span>
+            </div>
+            <div class="card-body">
+                <p>{{ plan.desc }}</p>
+                <ul class="stats">
+                    <li>⏱️ <strong>Time:</strong> {{ plan.duration }}</li>
+                    <li>🔥 <strong>Burn:</strong> {{ plan.cal }} kcal</li>
+                </ul>
+                <button class="card-btn" onclick="alert('Starting {{ plan.name }}!')">Join Plan</button>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
 </div>
 {% endblock %}
