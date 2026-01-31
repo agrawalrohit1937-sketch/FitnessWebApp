@@ -1,9 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="hero">
-    <h1>Transform Your Body Today</h1>
-    <p>Fitness is not a destination, it is a way of life. Start your journey with us.</p>
-    <a href="{{ url_for('workouts') }}" class="btn">Get Started</a>
+<section class="hero-section">
+    <div class="hero-text">
+        <h1>BUILD YOUR DREAM PHYSIQUE</h1>
+        <p>Expert plans, nutrition guides, and a community that pushes you forward.</p>
+        <a href="{{ url_for('workouts') }}" class="cta-button">Start Training</a>
+    </div>
+</section>
+
+<section class="features">
+    <h2>Why Choose FitPulse?</h2>
+    <div class="feature-grid">
+        <div class="feature-box">
+            <h3>🚀 Expert Guidance</h3>
+            <p>Workouts designed by certified trainers for maximum efficiency.</p>
+        </div>
+        <div class="feature-box">
+            <h3>🍎 Custom Nutrition</h3>
+            <p>Diet plans tailored for vegetarians and non-vegetarians alike.</p>
+        </div>
+        <div class="feature-box">
+            <h3>📊 Progress Tracking</h3>
+            <p>Tools like BMI calculators to keep you on top of your goals.</p>
+        </div>
+    </div>
 </section>
 {% endblock %}
