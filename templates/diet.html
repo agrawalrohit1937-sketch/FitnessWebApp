@@ -1,24 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Nutrition Plans</h2>
-<div class="diet-section">
-    <div class="diet-box">
-        <h3>🥗 Vegetarian Plan</h3>
-        <ul>
-            <li>Breakfast: Oatmeal with almonds</li>
-            <li>Lunch: Lentils (Dal), Brown Rice, Salad</li>
-            <li>Dinner: Grilled Paneer & Veggies</li>
+<section class="page-header">
+    <h2>Healthy Nutrition Plans</h2>
+    <p>Abs are made in the kitchen. Pick your preference.</p>
+</section>
+
+<div class="container diet-container">
+    
+    <div class="diet-card veg">
+        <h3>🥦 Vegetarian Power</h3>
+        <ul class="diet-list">
+            {% for meal in diets.veg %}
+            <li>✅ {{ meal }}</li>
+            {% endfor %}
         </ul>
     </div>
 
-    <div class="diet-box">
-        <h3>🍗 Non-Vegetarian Plan</h3>
-        <ul>
-            <li>Breakfast: 3 Boiled Eggs & Toast</li>
-            <li>Lunch: Grilled Chicken Breast & Quinoa</li>
-            <li>Dinner: Fish Fillet with Steamed Broccoli</li>
+    <div class="diet-card nonveg">
+        <h3>🍗 Lean Protein (Non-Veg)</h3>
+        <ul class="diet-list">
+            {% for meal in diets.nonveg %}
+            <li>✅ {{ meal }}</li>
+            {% endfor %}
         </ul>
     </div>
+
 </div>
 {% endblock %}
