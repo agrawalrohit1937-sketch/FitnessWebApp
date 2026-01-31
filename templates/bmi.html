@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>BMI Calculator</h2>
+<div class="bmi-container">
+    <label>Weight (kg):</label>
+    <input type="number" id="weight" placeholder="Enter weight">
+
+    <label>Height (cm):</label>
+    <input type="number" id="height" placeholder="Enter height">
+
+    <button onclick="calculateBMI()" class="btn">Calculate BMI</button>
+
+    <div id="result" class="result-box"></div>
+</div>
+{% endblock %}
